@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b4eh1r4osg5y3"]
+
+[ext_resource type="PackedScene" uid="uid://jmutog507bxl" path="res://import/Fast Run.fbx" id="1_8afob"]
+[ext_resource type="Script" uid="uid://byl1drk8rglt6" path="res://scenes/player/player.gd" id="1_dovo2"]
+[ext_resource type="PackedScene" uid="uid://clxowg48fefmh" path="res://scenes/ui/score/score_lable.tscn" id="3_gmlin"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dovo2"]
+height = 1.9179688
+
+[node name="Player" type="CharacterBody3D" unique_id=80608813 groups=["player"]]
+script = ExtResource("1_dovo2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1228007694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94716877, 0)
+shape = SubResource("CapsuleShape3D_dovo2")
+
+[node name="Fast Run" parent="." unique_id=2120787715 instance=ExtResource("1_8afob")]
+transform = Transform3D(-0.99992, 0, -0.012653379, 0, 1, 0, 0.012653379, 0, -0.99992, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=257006835]
+transform = Transform3D(0.9929055, -0.030516636, 0.11492396, -1.1986762e-09, 0.9665061, 0.25664377, -0.11890661, -0.254823, 0.95964915, -0.0023508072, 2.4480438, 1.0650239)
+
+[node name="ScoreLable" parent="." unique_id=1265011496 instance=ExtResource("3_gmlin")]

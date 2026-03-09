@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://clxowg48fefmh"]
+
+[ext_resource type="Script" uid="uid://d254g16051bmy" path="res://scenes/ui/score/score_lable.gd" id="1_2m5hp"]
+
+[node name="ScoreLable" type="CanvasLayer" unique_id=1265011496]
+script = ExtResource("1_2m5hp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1248840798]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer" unique_id=668274467]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 100
+text = "123"
+fit_content = true
+horizontal_alignment = 1

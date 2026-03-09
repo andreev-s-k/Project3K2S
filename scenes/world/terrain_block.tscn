@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://c7e2y2pgo6pwx"]
+
+[ext_resource type="Material" uid="uid://dbl6bv0cldv0o" path="res://AmbientCG/Extracted/PavingStones081_2K-JPG.tres" id="1_vcd7q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ru3a"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0ru3a"]
+load_path = "res://.godot/imported/PavingStones081_2K-JPG_Color.jpg-003e98004098f55e7d79e264f4cd19e5.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vcd7q"]
+load_path = "res://.godot/imported/PavingStones081_2K-JPG_AmbientOcclusion.jpg-550b222076a4f3ac9346a0081e48e5c2.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x2w03"]
+load_path = "res://.godot/imported/PavingStones081_2K-JPG_NormalGL.jpg-ed2d6f6b09c1cd5a10ed07280cc5768b.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_munwu"]
+load_path = "res://.godot/imported/PavingStones081_2K-JPG_Roughness.jpg-494f714fdf80dfcb6fec8728d8f265f6.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4o3l"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = SubResource("CompressedTexture2D_0ru3a")
+roughness_texture = SubResource("CompressedTexture2D_munwu")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_x2w03")
+ao_enabled = true
+ao_texture = SubResource("CompressedTexture2D_vcd7q")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+uv1_scale = Vector3(0.565, 0.565, 0.565)
+uv1_triplanar = true
+texture_filter = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lac3i"]
+load_path = "res://.godot/imported/PavingStones081_2K-JPG_Color.jpg-003e98004098f55e7d79e264f4cd19e5.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_audkj"]
+load_path = "res://.godot/imported/PavingStones081_2K-JPG_AmbientOcclusion.jpg-550b222076a4f3ac9346a0081e48e5c2.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xlyug"]
+load_path = "res://.godot/imported/PavingStones081_2K-JPG_NormalGL.jpg-ed2d6f6b09c1cd5a10ed07280cc5768b.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ususp"]
+load_path = "res://.godot/imported/PavingStones081_2K-JPG_Roughness.jpg-494f714fdf80dfcb6fec8728d8f265f6.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pm0e8"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = SubResource("CompressedTexture2D_lac3i")
+roughness_texture = SubResource("CompressedTexture2D_ususp")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_xlyug")
+ao_enabled = true
+ao_texture = SubResource("CompressedTexture2D_audkj")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+uv1_scale = Vector3(0.565, 0.565, 0.565)
+uv1_triplanar = true
+texture_filter = 1
+
+[node name="TerrainBlock" type="CSGCombiner3D" unique_id=485337494]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=12156966]
+use_collision = true
+size = Vector3(10, 0.1, 10)
+material = SubResource("StandardMaterial3D_0ru3a")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1253845971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.50911, 4.5456815, 0)
+size = Vector3(1, 8.982666, 10)
+material = SubResource("StandardMaterial3D_l4o3l")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1790535638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4925413, 4.586209, 0)
+size = Vector3(1, 9.063721, 10)
+material = SubResource("StandardMaterial3D_pm0e8")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1247539136]
+transform = Transform3D(0.0011693991, 0.99999934, 0, -0.99999934, 0.0011693991, 0, 0, 0, 1, 0.25372052, 9.533207, 0)
+visible = false
+size = Vector3(1, 9.063721, 10)
+material = ExtResource("1_vcd7q")

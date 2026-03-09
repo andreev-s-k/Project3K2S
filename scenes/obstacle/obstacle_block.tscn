@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bj7qjugmiormk"]
+
+[ext_resource type="Material" uid="uid://dbl6bv0cldv0o" path="res://AmbientCG/Extracted/PavingStones081_2K-JPG.tres" id="1_joigg"]
+
+[node name="ObstacleBlock" type="CSGCombiner3D" unique_id=1610753530]
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=2115849219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+radius = 0.45
+height = 9.417
+material = ExtResource("1_joigg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CSGCylinder3D" unique_id=179328510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9064264, 0)
+visible = false
+light_specular = 0.0

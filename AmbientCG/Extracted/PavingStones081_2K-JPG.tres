@@ -1,0 +1,25 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dbl6bv0cldv0o"]
+
+[ext_resource type="Texture2D" uid="uid://deax3f5hy5u8t" path="res://AmbientCG/Extracted/PavingStones081_2K-JPG_AmbientOcclusion.jpg" id="AmbientOcclusion"]
+[ext_resource type="Texture2D" uid="uid://b63u7473nb32i" path="res://AmbientCG/Extracted/PavingStones081_2K-JPG_Color.jpg" id="Color"]
+[ext_resource type="Texture2D" uid="uid://c6osj0e33pb2t" path="res://AmbientCG/Extracted/PavingStones081_2K-JPG_NormalGL.jpg" id="NormalGL"]
+[ext_resource type="Texture2D" uid="uid://0tcjmtv0xv5k" path="res://AmbientCG/Extracted/PavingStones081_2K-JPG_Roughness.jpg" id="Roughness"]
+
+[resource]
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = ExtResource("Color")
+albedo_texture_force_srgb = true
+roughness_texture = ExtResource("Roughness")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("NormalGL")
+ao_enabled = true
+ao_texture = ExtResource("AmbientOcclusion")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+uv1_scale = Vector3(0.565, 0.565, 0.565)
+uv1_triplanar = true
+texture_filter = 1

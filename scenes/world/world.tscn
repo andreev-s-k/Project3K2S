@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://gq2p0bgdwck2"]
+
+[ext_resource type="Texture2D" uid="uid://bsi2y5mqvckwr" path="res://AmbientCG/Extracted/NightSkyHDRI008_2K_HDR.exr" id="1_1fp7r"]
+[ext_resource type="PackedScene" uid="uid://b4eh1r4osg5y3" path="res://scenes/player/player.tscn" id="1_dphjl"]
+[ext_resource type="Script" uid="uid://b6s8emqps3idw" path="res://scenes/world/world.gd" id="1_v5dby"]
+[ext_resource type="PackedScene" uid="uid://c7e2y2pgo6pwx" path="res://scenes/world/terrain_block.tscn" id="4_t5ptc"]
+[ext_resource type="Script" uid="uid://ct7h4yyqillvd" path="res://scenes/world/terrain_generator.gd" id="5_bq33v"]
+[ext_resource type="Script" uid="uid://fsu6hjqv5sle" path="res://scenes/world/obstacle_generator.gd" id="6_t5ptc"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t5ptc"]
+panorama = ExtResource("1_1fp7r")
+
+[sub_resource type="Sky" id="Sky_t5ptc"]
+sky_material = SubResource("PanoramaSkyMaterial_t5ptc")
+
+[sub_resource type="Environment" id="Environment_1fp7r"]
+background_mode = 2
+sky = SubResource("Sky_t5ptc")
+ambient_light_energy = 0.0
+tonemap_mode = 2
+ssr_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_emission_energy = 0.0
+
+[node name="World" type="Node3D" unique_id=1056467927]
+script = ExtResource("1_v5dby")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=586651073]
+environment = SubResource("Environment_1fp7r")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=6977004]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=80608813 instance=ExtResource("1_dphjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315, 0)
+
+[node name="TerrainBlock" parent="." unique_id=485337494 instance=ExtResource("4_t5ptc")]
+
+[node name="TerrainGenerator" type="Node" parent="." unique_id=1603953986]
+script = ExtResource("5_bq33v")
+
+[node name="ObstacleGeneratorTimer" type="Timer" parent="." unique_id=1820937940]
+wait_time = 3.0
+autostart = true
+
+[node name="ObstacleGenerator" type="Node" parent="." unique_id=694873576]
+script = ExtResource("6_t5ptc")
+
+[connection signal="timeout" from="ObstacleGeneratorTimer" to="ObstacleGenerator" method="_on_obstacle_generator_timer_timeout"]
