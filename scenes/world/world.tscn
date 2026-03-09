@@ -21,7 +21,9 @@ tonemap_mode = 2
 ssr_enabled = true
 glow_enabled = true
 volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
 volumetric_fog_emission_energy = 0.0
+volumetric_fog_anisotropy = -0.65
 
 [node name="World" type="Node3D" unique_id=1056467927]
 script = ExtResource("1_v5dby")
@@ -31,6 +33,7 @@ environment = SubResource("Environment_1fp7r")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=6977004]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_energy = 1.741
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=80608813 instance=ExtResource("1_dphjl")]
@@ -43,7 +46,6 @@ script = ExtResource("5_bq33v")
 
 [node name="ObstacleGeneratorTimer" type="Timer" parent="." unique_id=1820937940]
 wait_time = 3.0
-autostart = true
 
 [node name="ObstacleGenerator" type="Node" parent="." unique_id=694873576]
 script = ExtResource("6_t5ptc")

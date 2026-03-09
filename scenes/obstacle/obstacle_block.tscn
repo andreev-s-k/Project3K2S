@@ -2,6 +2,9 @@
 
 [ext_resource type="Material" uid="uid://dbl6bv0cldv0o" path="res://AmbientCG/Extracted/PavingStones081_2K-JPG.tres" id="1_joigg"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_joigg"]
+size = Vector3(0.99120116, 9.344, 1.3442187)
+
 [node name="ObstacleBlock" type="CSGCombiner3D" unique_id=1610753530]
 use_collision = true
 
@@ -15,3 +18,9 @@ material = ExtResource("1_joigg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9064264, 0)
 visible = false
 light_specular = 0.0
+
+[node name="Area3D" type="Area3D" parent="." unique_id=542645157]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1957518402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00528419, 0.9703369, 0.36925292)
+shape = SubResource("BoxShape3D_joigg")
