@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://be0lksj4p23gj"
+path="res://.godot/imported/footstep on concrete 2.wav-d057dc512251a79827121749da51dcc3.sample"
+
+[deps]
+
+source_file="res://theme/sounds/footstep on concrete 2.wav"
+dest_files=["res://.godot/imported/footstep on concrete 2.wav-d057dc512251a79827121749da51dcc3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

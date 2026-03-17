@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://buglvmhft535i"]
+
+[ext_resource type="Texture2D" uid="uid://bd4c7kpufrubd" path="res://theme/textures/panel-transparent-center-008.png" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://b7b25mtb2w30w" path="res://main_menu.gd" id="1_glbon"]
+[ext_resource type="PackedScene" uid="uid://jmutog507bxl" path="res://import/Fast Run.fbx" id="2_7vrkn"]
+[ext_resource type="Script" uid="uid://6ex0bw4bnce5" path="res://node_3d.gd" id="2_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://bey6r7yujxite" path="res://theme/textures/panel-transparent-center-025.png" id="2_jix8l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
+texture = ExtResource("1_06t4h")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+region_rect = Rect2(0, 0, 96, 96)
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_glbon"]
+texture = ExtResource("2_jix8l")
+texture_margin_left = 44.0
+texture_margin_top = 44.0
+texture_margin_right = 44.0
+texture_margin_bottom = 44.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
+texture = ExtResource("2_jix8l")
+texture_margin_left = 44.0
+texture_margin_top = 44.0
+texture_margin_right = 44.0
+texture_margin_bottom = 44.0
+modulate_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qe12f"]
+texture = ExtResource("2_jix8l")
+texture_margin_left = 44.0
+texture_margin_top = 44.0
+texture_margin_right = 44.0
+texture_margin_bottom = 44.0
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+modulate_color = Color(0.7666196, 0.76661956, 0.76661956, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fu7sn"]
+sky_top_color = Color(1, 1, 1, 1)
+sky_horizon_color = Color(1, 1, 1, 1)
+ground_bottom_color = Color(1, 1, 1, 1)
+ground_horizon_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Sky" id="Sky_jix8l"]
+sky_material = SubResource("ProceduralSkyMaterial_fu7sn")
+
+[sub_resource type="Environment" id="Environment_fu7sn"]
+background_mode = 2
+sky = SubResource("Sky_jix8l")
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="Node3D" type="Node3D" unique_id=1481406835]
+script = ExtResource("1_glbon")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=839400799]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1554747660]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control" unique_id=681297713]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer" unique_id=786545254]
+layout_mode = 2
+
+[node name="Container2" type="Container" parent="CanvasLayer/Control/PanelContainer/HBoxContainer" unique_id=1481603898]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer/HBoxContainer" unique_id=312108254]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+
+[node name="Container2" type="Container" parent="CanvasLayer/Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1574196040]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=718044542]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.47
+theme_override_styles/panel = SubResource("StyleBoxTexture_7vrkn")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/PanelContainer/HBoxContainer/VBoxContainer/PanelContainer" unique_id=1247562722]
+layout_mode = 2
+theme_override_constants/margin_left = 82
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 82
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=892874797]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="StartButton" type="Button" parent="CanvasLayer/Control/PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=561486394]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.14044744, 0.14044747, 0.14044738, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxTexture_glbon")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nlkkf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qe12f")
+text = "START"
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/Control/PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=517833765]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.14044744, 0.14044747, 0.14044738, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxTexture_glbon")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nlkkf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qe12f")
+text = "EXIT"
+
+[node name="Container" type="Container" parent="CanvasLayer/Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=981795516]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Container" type="Container" parent="CanvasLayer/Control/PanelContainer/HBoxContainer" unique_id=1801302474]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=534464196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8598678, 1.0996877, 1.634567)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1726227163]
+script = ExtResource("2_fu7sn")
+
+[node name="Fast Run" parent="Node3D" unique_id=2120787715 instance=ExtResource("2_7vrkn")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=541508287]
+environment = SubResource("Environment_fu7sn")
+
+[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

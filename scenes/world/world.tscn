@@ -1,21 +1,26 @@
 [gd_scene format=3 uid="uid://gq2p0bgdwck2"]
 
-[ext_resource type="Texture2D" uid="uid://bsi2y5mqvckwr" path="res://AmbientCG/Extracted/NightSkyHDRI008_2K_HDR.exr" id="1_1fp7r"]
 [ext_resource type="PackedScene" uid="uid://b4eh1r4osg5y3" path="res://scenes/player/player.tscn" id="1_dphjl"]
 [ext_resource type="Script" uid="uid://b6s8emqps3idw" path="res://scenes/world/world.gd" id="1_v5dby"]
 [ext_resource type="PackedScene" uid="uid://c7e2y2pgo6pwx" path="res://scenes/world/terrain_block.tscn" id="4_t5ptc"]
 [ext_resource type="Script" uid="uid://ct7h4yyqillvd" path="res://scenes/world/terrain_generator.gd" id="5_bq33v"]
 [ext_resource type="Script" uid="uid://fsu6hjqv5sle" path="res://scenes/world/obstacle_generator.gd" id="6_t5ptc"]
+[ext_resource type="AudioStream" uid="uid://bqlrpferrrf15" path="res://theme/sounds/Sketchbook 2024-02-28_01.ogg" id="7_bq33v"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t5ptc"]
-panorama = ExtResource("1_1fp7r")
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t5ptc"]
+sky_top_color = Color(1, 1, 1, 1)
+sky_horizon_color = Color(1, 1, 1, 1)
+ground_bottom_color = Color(1, 1, 1, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+sun_angle_max = 0.0
 
 [sub_resource type="Sky" id="Sky_t5ptc"]
-sky_material = SubResource("PanoramaSkyMaterial_t5ptc")
+sky_material = SubResource("ProceduralSkyMaterial_t5ptc")
 
 [sub_resource type="Environment" id="Environment_1fp7r"]
 background_mode = 2
 sky = SubResource("Sky_t5ptc")
+ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.0
 tonemap_mode = 2
 ssr_enabled = true
@@ -49,5 +54,10 @@ wait_time = 3.0
 
 [node name="ObstacleGenerator" type="Node" parent="." unique_id=694873576]
 script = ExtResource("6_t5ptc")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=415743439]
+stream = ExtResource("7_bq33v")
+volume_db = 8.96
+autoplay = true
 
 [connection signal="timeout" from="ObstacleGeneratorTimer" to="ObstacleGenerator" method="_on_obstacle_generator_timer_timeout"]

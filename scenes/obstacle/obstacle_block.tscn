@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bj7qjugmiormk"]
 
-[ext_resource type="Material" uid="uid://dbl6bv0cldv0o" path="res://AmbientCG/Extracted/PavingStones081_2K-JPG.tres" id="1_joigg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kh701"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_joigg"]
 size = Vector3(0.99120116, 9.344, 1.3442187)
@@ -12,7 +14,9 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 radius = 0.45
 height = 9.417
-material = ExtResource("1_joigg")
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_kh701")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="CSGCylinder3D" unique_id=179328510]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9064264, 0)

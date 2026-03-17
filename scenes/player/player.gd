@@ -8,6 +8,7 @@ var max_jumps=2
 var line = 0
 var finished = 0
 @onready var fast_run: Node3D = $"Fast Run"
+@onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 
 func _ready() -> void:
@@ -24,6 +25,7 @@ func _physics_process(delta: float) -> void:
 		jumps = 0
 	if not finished:
 		fast_run.get_node("AnimationPlayer").play("mixamo_com")
+		
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or jumps < max_jumps) and not finished:
 		jumps += 1
@@ -55,3 +57,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.z = 0
 	move_and_slide()
+
+
+func _on_timer_timeout() -> void:
+	if audio_stream_player_3d.finished and not finished:
+		audio_stream_player_3d.play()
